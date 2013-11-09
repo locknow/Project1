@@ -4,6 +4,8 @@
  */
 package newcompanydataanalyser;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Aphasia
@@ -14,6 +16,8 @@ public class NewCompanyDataAnalyser {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        
+        
     }
 }
