@@ -5,31 +5,46 @@
  */
 package newcompanydataanalyser;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-
 /**
  *
  * @author fangsidian
  */
 public class HashTable {
 
-    private ArrayList<LinkedList<String>> array;
+    private LinkedList[] elementList = null;
 
     public HashTable() {
-        array = new ArrayList<LinkedList<String>>();
     }
 
-    public void add(LinkedList linkedList) {
-        array.add(linkedList);
+    public HashTable(int size) {
+        elementList = new LinkedList[size];
     }
 
-    public void remove(int index) {
-        array.remove(index);
+    public void add(String text) {
+        int key = FindKey(text);
+        elementList[key].put(text);
     }
 
-    public LinkedList find(int index) {
-        return array.get(index);
+    public void remove(String text) {
+        int key = FindKey(text);
+        elementList[key].remove(text);
     }
 
+    public LinkedList find(String key) {
+        return elementList[FindKey(key)];
+    }
+
+    public int FindKey(String text) {
+        String[] letters = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"};
+        String letter = text.substring(0, 1).toLowerCase();
+        String l = "";
+
+        for (int i = 0; i < letters.length; i++) {
+            l = letters[i];
+            if (letter.equals(l)) {
+                return i;
+            }
+        }
+        return 0;
+    }
 }
