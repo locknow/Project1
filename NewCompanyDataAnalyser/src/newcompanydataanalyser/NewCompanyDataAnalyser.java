@@ -33,7 +33,9 @@ public class NewCompanyDataAnalyser {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Enter the name of your file (including file extension): ");
-        String filename = input.next();
+        //String filename = input.next();
+        
+        String filename="/Users/fangsidian/Project1/NewCompanyDataAnalyser/sources/dictionary.txt";
         try {
             Scanner in = new Scanner(new File(filename));
 
@@ -44,6 +46,8 @@ public class NewCompanyDataAnalyser {
                 generated = in.next();
             }
             theTable.add(generated);
+            
+            System.out.println("Done");
         } catch (Exception e) {
             e.printStackTrace();
         }

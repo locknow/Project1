@@ -9,19 +9,28 @@ package newcompanydataanalyser;
  * @author Aphasia
  */
 public class Link {
+
     String content;
-    Link pre;
-    Link next;
-    
-    public Link(){
-        
+    Link pre = null;
+    Link next = null;
+
+    public Link() {
+
     }
-    
-    public Link(String content){
-        this.content=content;
+
+    public Link(String content) {
+        this.content = content;
     }
-    
-    public String toString(){
+
+    public boolean hasNext() {
+        if (next == null) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public String toString() {
         return content;
     }
 }
